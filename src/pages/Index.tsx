@@ -157,7 +157,10 @@ const Index = () => {
             Boss Vent
           </h1>
           <p className="text-lg text-gray-600">
-            Express yourself safely,your voice matters. Vent safely and send feedback anonymously to your boss
+          Express yourself safely, your voice matters
+          </p>
+          <p className="text-lg text-gray-600">
+          Vent safely and send feedback anonymously to your boss
           </p>
         </div>
 
