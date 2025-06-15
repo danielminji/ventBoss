@@ -1,73 +1,119 @@
-# Welcome to your Lovable project
+# 💼 Boss Vent – Anonymous Voice-to-Feedback App
 
-## Project info
+**Boss Vent** is a web application that allows employees to safely and anonymously vent about their managers. It converts emotional voice venting into constructive feedback and sends it to the manager's email—without revealing the identity of the employee.
 
-**URL**: https://lovable.dev/projects/e6b0f8db-b561-4239-a9fe-0c5a9be38818
+---
 
-## How can I edit this code?
+## 🧠 Problem Statement
 
-There are several ways of editing your application.
+Employees often feel uncomfortable giving direct feedback to their managers. Fear of judgment, retaliation, or awkwardness leads to silence. This app solves that by enabling:
+- Anonymous expression through voice,
+- Real-time transcription,
+- Professional feedback transformation,
+- Private and secure email delivery.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e6b0f8db-b561-4239-a9fe-0c5a9be38818) and start prompting.
+## 🚀 Features
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🎤 Voice-to-Text Venting
+- Uses the **Web Speech API** to transcribe live speech.
+- Dynamic **Boss Avatar** reacts with emotion during the vent.
 
-**Use your preferred IDE**
+### 📝 Feedback Generation
+- Emotional transcripts are **converted to constructive feedback**.
+- Uses custom NLP logic in `feedbackUtils.ts`.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 📧 Anonymous Email Delivery
+- Sends feedback via **EmailJS** (client-side).
+- No user data is stored or logged.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🧑‍💻 Guided User Flow
+- Upload boss photo, enter email, start venting.
+- Feedback sent anonymously.
+- Session is cleared for privacy.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🛠️ Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+| Category           | Stack / Library                     |
+|--------------------|-------------------------------------|
+| **Frontend**       | React (TypeScript) + Vite           |
+| **Styling**        | Tailwind CSS, shadcn/ui             |
+| **UI Primitives**  | Radix UI via shadcn/ui              |
+| **Forms**          | React Hook Form, Zod                |
+| **Routing**        | React Router DOM                    |
+| **State/Data**     | React State, TanStack React Query   |
+| **Email**          | EmailJS (no backend needed)         |
+| **Speech API**     | Browser Web Speech API              |
+| **Icons/Utils**    | Lucide React, date-fns, Sonner      |
+| **Testing**        | Vitest, @testing-library/react      |
+| **Linting**        | ESLint, PostCSS                     |
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## 🧪 Project Structure
+
+```bash
+src/
+├── components/
+│   ├── AvatarUpload.tsx         # Avatar upload logic
+│   ├── BossAvatar.tsx           # Animated boss avatar
+│   └── ui/                      # UI primitives from shadcn
+├── lib/
+│   ├── feedbackUtils.ts         # Feedback transformation logic
+│   └── feedbackUtils.test.ts    # Unit tests
+├── pages/
+│   └── Index.tsx                # Main app logic
+public/
+└── favicon.ico                  # Angry employee icon
+🧩 User Flow
+👤 User enters boss's email and uploads a photo.
+
+🎙️ Clicks "Start Venting" – voice is transcribed live.
+
+🤖 Boss avatar reacts while user talks.
+
+📬 Transcript is converted into professional feedback.
+
+✉️ Email is sent anonymously to the boss.
+
+🔁 Session resets.
+
+🧑‍🎓 Example User Story
+“As an employee, I want to vent about my boss without fear of reprisal. I upload my boss’s photo, enter their email, and start talking. The avatar reacts in real time. After I finish, my words are turned into a constructive email sent anonymously to my boss.”
+
+🔐 Privacy & Security
+All data is handled client-side.
+
+No recordings or emails are stored.
+
+Only the feedback report is sent anonymously via EmailJS.
+
+🧠 Future Enhancements
+✅ Sentiment analysis for smarter feedback tone.
+
+📝 Allow users to review/edit feedback before sending.
+
+📊 HR dashboard for enterprise version.
+
+🧾 Support multiple recipients.
+
+📦 Installation
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/boss-vent.git
+cd boss-vent
+npm install
 npm run dev
-```
+🧾 License
+MIT © 2025 danielminji
 
-**Edit a file directly in GitHub**
+🙏 Acknowledgements
+shadcn/ui
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+EmailJS
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e6b0f8db-b561-4239-a9fe-0c5a9be38818) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Web Speech API
