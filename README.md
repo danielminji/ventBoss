@@ -116,7 +116,7 @@ download zip file
 extract file
 open folder in code editor
 run npm install
-run npm run dec
+run npm run dev
 🧾 License
 MIT © 2025 danielminji
 
