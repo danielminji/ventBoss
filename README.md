@@ -104,10 +104,19 @@ Only the feedback report is sent anonymously via EmailJS.
 bash
 Copy
 Edit
+
+mode 1:
 git clone https://github.com/yourusername/boss-vent.git
 cd boss-vent
 npm install
 npm run dev
+
+mode 2:
+download zip file
+extract file
+open folder in code editor
+run npm install
+run npm run dec
 🧾 License
 MIT © 2025 danielminji
 
