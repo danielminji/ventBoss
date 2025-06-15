@@ -55,8 +55,15 @@ const Index = () => {
           finalTranscript += event.results[i][0].transcript;
         }
       }
-      if (finalTranscript.trim()) {
-        setVentText(prev => (prev.trim() + ' ' + finalTranscript.trim()).trim());
+     const trimmedTranscript = finalTranscript.trim();
+      if (trimmedTranscript) {
+        setVentText(prev => {
+          // Prevent appending duplicate text caused by Android's restart behavior.
+          if (prev.endsWith(trimmedTranscript)) {
+            return prev;
+          }
+          return (prev.trim() + ' ' + trimmedTranscript).trim();
+        });
       }
       
       // Set a new timer. If no new results come in for 2 seconds, we assume they stopped talking.
